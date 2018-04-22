@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+	    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+	    <link href="../css/style.css" rel="stylesheet"> </head>
+
+	</head>
+	<body>
+		<div id = "myApp">
+			<p>今年3月3日发卖的任天堂新一代主机Switch的价格是：{{price}}円，含税价格为：{{priceInTax}}円，折合人民币为：{{priceChinaRMB}}元。</p>
+			<button @Click="btnClick('10800')">将税的价格设置为10800</button>
+		
+		</div>
+		<script>
+			var myApp = new Vue({
+				el:'#myApp',
+				data:{
+					price:29800,
+				},
+				computed:{
+					priceInTax:{
+						get:function(){
+							return Math.round(this.price * 1.08);
+						},
+						set:function(val){
+							return this.price = val / 1.08;
+						}
+					},
+					priceChinaRMB:function(){
+						return Math.round(this.priceInTax / 16.75);
+					}
+				},
+				methods:{
+					btnClick:function(val){
+						this.priceInTax = val;
+					}
+				}
+				
+			});
+		</script>
+	</body>
+</html>

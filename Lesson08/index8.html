@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta charset="UTF-8">
+	    <meta name="viewport" content="width=device-width, initial-scale=1">
+	    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+	    <link href="../css/style.css" rel="stylesheet"> </head>
+		
+	</head>
+	<body>
+		<div id = "myApp">
+			今年3月3日发卖的任天堂新一代主机Switch的价格是：{{price}}円，含税价格为：{{priceInTax}}円，折合人民币为：{{priceChinaRMB}}元。
+			<button @click="btnClick(1000)">加价</button>
+		</div>
+		
+		<script>
+			var myApp = new Vue({
+				el:'#myApp',
+				data:{
+					price:29980
+				},
+				computed:{
+					priceInTax:function(){
+						return this.price*1.08; 
+					},
+					priceChinaRMB:function(){
+						return Math.round(this.priceInTax / 16.75);
+					}
+				},
+				methods:{
+					btnClick:function(val){
+						this.price += val;
+					}
+				}
+			});
+		</script>
+	</body>
+</html>

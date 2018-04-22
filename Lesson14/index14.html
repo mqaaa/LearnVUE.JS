@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+	    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+	    <link href="../css/style.css" rel="stylesheet">
+	</head>
+	<body>
+		<div id = "myApp">
+			<h1 v-show = "result">Good Good Study,Day Day Up</h1>
+			<button @Click="btnClick()">点击啦啦啦</button>
+		</div>
+		<script>
+			var myApp = new Vue({
+				el:'#myApp',
+				data:{
+					result:true
+				},
+				methods:{
+					btnClick:function(){
+						this.result = !this.result;
+					}
+				}
+			});
+		</script>
+	</body>
+</html>

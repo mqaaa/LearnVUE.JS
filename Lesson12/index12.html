@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+	    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+	    <link href="../css/style.css" rel="stylesheet">
+		<title></title>
+	</head>
+	<body>
+		<div id = "myApp">
+			<div :class = "myClass">测试文本</div>
+			<button @Click="btnClick()">改变样式吧</button>
+		</div>
+		<script>
+			var myApp = new Vue({
+				el:'#myApp',
+				data:{
+					myClass:{
+						active:true,
+						big:true,
+					}
+				},
+				methods:{
+					btnClick:function(){
+						this.myClass.active = !this.myClass.active;
+						this.myClass.big = !this.myClass.big;
+					}
+				}
+			});
+		</script>
+	</body>
+</html>

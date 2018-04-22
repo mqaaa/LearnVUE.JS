@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+	    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+	    <link href="../css/style.css" rel="stylesheet"> </head>
+
+	</head>
+	<body>
+		<div id = "myApp">
+			<p>{{ message }}</p>
+			<p>{{ message | toupper }}</p>
+			<hr>
+			<p>现在我们学习VUE.JS的进度为{{ num }}({{ num | topercentage }})</p>
+		</div>
+		<script>
+			var myApp = new Vue({
+				el:"#myApp",
+				data:{
+					message:"I love quiqui",
+					num:0.3
+				},
+				filters:{
+					toupper:function(value){
+						return value.toUpperCase();
+					},
+					topercentage:function(valude){
+						return valude*100 + '%';
+					}
+				}
+			});
+		</script>
+	</body>
+</html>

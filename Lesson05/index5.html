@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title></title>
+	    <meta charset="UTF-8">
+	    <meta name="viewport" content="width=device-width, initial-scale=1">
+	    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+	    <link href="../css/style.css" rel="stylesheet"> </head>
+	</head>
+	<body>
+		<div id = "myApp">
+			<p>我最喜欢的游戏：{{ message }}</p>
+			<button v-on:click="btnClick('我的世界')">我的世界</button>
+			<button v-on:click="btnClick('勇者斗恶龙')">勇者斗恶龙</button>
+			<button v-on:click="btnClick('绝地求生')">绝地求生</button>
+			<button v-on:click="btnClick('英雄联盟')">英雄联盟</button>
+		</div>
+		<script>
+			var myApp = new Vue({
+				el:'#myApp',
+				data: {
+					message:'我的世界'
+				},
+				methods: {
+					btnClick:function(game){
+						this.message = game;
+					},
+				},
+			});
+		</script>
+	</body>
+</html>

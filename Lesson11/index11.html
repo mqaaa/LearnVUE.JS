@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+	    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+	    <link href="../css/style.css" rel="stylesheet">
+	</head>
+	<body>
+		
+		<div id = "myApp">
+			<div class= "active" >测试1</div><br />
+			<div :class="{active:isactive}">测试2</div><br />
+			<button @Click="btnClick()">改变格式</button>
+		</div>
+		<script>
+			var myApp = new Vue({
+				el:'#myApp',
+				data:{
+					isactive:true,
+				},
+				methods:{
+					btnClick:function(){
+						this.isactive = !this.isactive;
+					}
+				}
+			});
+		</script>
+	</body>
+</html>

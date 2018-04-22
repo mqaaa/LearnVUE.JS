@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+	    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+	    <link href="../css/style.css" rel="stylesheet">
+	</head>
+	<body>
+		<ol id = "myApp">
+			<li v-for="(value,key) in mygame">
+				{{ key }}:{{ value }}
+			</li>
+		</ol>
+		<script>
+			var myApp = new Vue({
+				el:'#myApp',
+				data:{
+					mygame:{
+						title:"乌贼娘二代",
+						price:300,
+						pubdate:"2017年夏季",
+						agerange:"全年龄"
+					}
+				}
+			});
+		</script>
+	</body>
+</html>

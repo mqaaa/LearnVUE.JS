@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="zh">
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+	    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+	    <link href="../css/style.css" rel="stylesheet"> </head>
+
+	</head>
+	<body>
+		<div id= "myApp">
+			<ol>
+				<game-item v-for="item in games"  v-bine:gane="item"></game-item>
+			</ol>
+		</div>
+		<script>
+			Vue.component('game-item',{
+				props: ['game'],
+				template: '<li>{{ game.title }}</li>'
+			});
+			
+			var myApp = new Vue({
+				el:'#myApp',
+				data: {
+					games:[
+						{ title: "完美世界" },
+						{ title: "超级玛丽奥" },
+						{ title: "绝地求生" }
+					]
+				},
+			});
+		</script>
+	</body>
+</html>

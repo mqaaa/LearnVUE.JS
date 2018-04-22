@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+    <link href="../css/style.css" rel="stylesheet"> </head>
+
+<body>
+   	<div id = "myApp">
+   		<div v-if = "seen">2018最新游戏</div>
+   		<ol>
+   			<li v-for = "game in games">{{ game.title }}/{{ game.price }}</li>
+   		</ol>
+   	</div>
+   	<script>
+   		var myApp = new Vue({
+   			el:'#myApp',
+   			data:{
+   				seen:false,
+   				games:[
+   					{title:'勇士斗恶龙',price:199},
+   					{title:'超级马里奥',price:299},
+   					{title:'魂斗罗',price:399},
+   					{title:'我的世界',price:499}
+   				]
+   			}
+   		});
+   	</script>
+</body>
+
+</html>

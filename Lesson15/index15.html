@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+	    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+	    <link href="../css/style.css" rel="stylesheet">
+	</head>
+	<body>
+		<ol id = "myApp">
+			<li v-for="(game,index) in games">({{index+5}}) {{ game.title }},售价{{ game.price }}</li>
+		</ol>
+		<script>
+			var myApp = new Vue({
+				el:'#myApp',
+				data:{
+					games:[
+						{title:"勇者斗恶龙",price:100},
+						{title:"超级马里奥",price:200},
+						{title:"三国杀",price:300}
+					]
+				}
+			});
+		</script>
+	</body>
+</html>
