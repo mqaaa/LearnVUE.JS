@@ -36,17 +36,6 @@ Vue.js学习
 31. 组件：slot插槽
 32. 组件：组合slot
 
-## 源文件
 
-* https://gitee.com/komavideo/LearnVueJS
 
-## 小马视频频道
-
-http://komavideo.com/vuejs/index.html
-
-**推荐您使用Youtube观看高清视频**
-
-### 2018/03/12
-
-文件夹整理，LearnVueJS2课程准备中。
 
