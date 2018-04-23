@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+    	<script src="https://unpkg.com/vue/dist/vue.js"></script>
+    	<link href="../css/style.css" rel="stylesheet">
+	</head>
+	<body>
+		<div id = "myApp">
+			<h2>成绩单</h2>
+			<test-grade :grade="50"></test-grade>
+			<test-grade :grade="60"></test-grade>
+			<test-grade :grade="81"></test-grade>
+			<test-grade :grade="100"></test-grade>
+		</div>
+		<script>
+			Vue.component('test-grade',{
+				props:['grade'],
+				template:'<div><strong>{{grade}}分，{{result}}</strong></div>',
+				computed:{
+					result:function(){
+						var str = "";
+						if(this.grade < 60)
+							str = "BAD";
+						else if(this.grade < 80)
+							str = "MID";
+						else if(this.grade < 90)
+							str = "GOOD";
+						else if(this.grade <= 100)
+							str = "BEST";
+						return str;
+					}
+				}
+			});
+			var myApp = new Vue({
+				el:'#myApp',
+			});
+		</script>
+	</body>
+</html>
