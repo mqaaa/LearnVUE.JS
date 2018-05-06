@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="zh">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+	    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+	    <link href="../css/style.css" rel="stylesheet">
+		<title></title>
+	</head>
+	<body>
+		<div id = "myApp">
+			<say-to pname="koma">你做的视频太烂了</say-to>
+			<say-to pname="Tom">你可别学他了</say-to>
+			<say-to pname="john">你教教他们</say-to>
+		</div>
+	</body>
+	<script>
+		Vue.component('say-to',{
+			props:['pname'],
+			template:'<div>'
+				+'你好，<strong>{{ pname }}</strong>'
+				+'<slot></slot>'
+				+'</div>',
+		});
+		var myApp = new Vue({
+			el:'#myApp',
+		});
+	</script>
+</html>
